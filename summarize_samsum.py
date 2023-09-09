@@ -114,16 +114,19 @@ if __name__ == "__main__":
     results = rogue.compute(predictions=all_predictions, references=all_references)
     r1 = results["rouge1"]
     r2 = results["rouge2"]
-    rl = results["rougeL"]
+    r3 = results["rougeL"]
 
 
-    #After all processing and calculations, print the metrics
-    print(
-        f"[Samsum LEAD-3] R1: {r1:.4f}, R2: {r2:.4f}, Rl: {rl:.4f} (top_k: {args.top_k})"
-    )
+    
 
 # Print the generated summaries
-for idx, generated_summary in enumerate(all_predictions):
-    print(f"Generated Summary {idx + 1}:")
-    print(generated_summary)
-    print("=" * 50)
+# for idx, generated_summary in enumerate(all_predictions):
+#     print(f"Generated Summary {idx + 1}:")
+#     print(generated_summary)
+#     print("=" * 50)
+
+#After all processing and calculations, print the metrics
+    print(
+        f"[Samsum LEAD-3] R1: {r1:.4f}, R2: {r2:.4f}, R3: {r3:.4f} (top_k: {args.top_k})"
+    )
+
